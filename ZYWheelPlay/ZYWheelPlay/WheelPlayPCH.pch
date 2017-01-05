@@ -1,0 +1,14 @@
+//
+//  WheelPlayPCH.pch
+//  ZYWheelPlay
+//
+//  Created by chuanglong03 on 2017/1/3.
+//  Copyright © 2017年 chuanglong. All rights reserved.
+//
+
+#ifndef WheelPlayPCH_pch
+#define WheelPlayPCH_pch
+
+#define DEVICE_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#endif
