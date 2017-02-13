@@ -9,6 +9,7 @@
 #import "RootTableViewController.h"
 #import "WheelPlayByManyImageViewVC.h"
 #import "WheelPlayByThreeImageViewVC.h"
+#import "WheelPlayByOneImageViewVC.h"
 
 @interface RootTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -46,6 +47,9 @@
         case 1:
             [self enterWheelPlayByThreeImageViewVC];
             break;
+        case 2:
+            [self enterWheelPlayByOneImageViewVC];
+            break;
     }
 }
 
@@ -61,9 +65,15 @@
     [self.navigationController pushViewController:threeImageViewVC animated:YES];
 }
 
+#pragma mark - 一张 ImageView
+- (void)enterWheelPlayByOneImageViewVC {
+    WheelPlayByOneImageViewVC *oneImageViewVC = [[WheelPlayByOneImageViewVC alloc] init];
+    [self.navigationController pushViewController:oneImageViewVC animated:YES];
+}
+
 - (NSArray *)titleAry {
     if(_titleAry == nil) {
-        _titleAry = [[NSArray alloc] initWithObjects:@"通过多张 ImageView 实现轮播", @"通过 3 张 ImageView 实现轮播", nil];
+        _titleAry = [[NSArray alloc] initWithObjects:@"通过多张 ImageView 实现轮播", @"通过 3 张 ImageView 实现轮播", @"通过一张 ImageView 实现轮播", nil];
     }
     return _titleAry;
 }

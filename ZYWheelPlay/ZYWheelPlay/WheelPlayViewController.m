@@ -46,7 +46,7 @@
 }
 
 - (void)setupTimer {
-    timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(autoPlay) userInfo:nil repeats:YES];
+    timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(autoPlay) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 

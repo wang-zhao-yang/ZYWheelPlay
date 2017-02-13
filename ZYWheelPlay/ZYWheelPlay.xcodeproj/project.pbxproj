@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F732C23C1E514BC4001A5911 /* WheelPlayByOneImageViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F732C23B1E514BC4001A5911 /* WheelPlayByOneImageViewVC.m */; };
+		F732C23F1E514EA9001A5911 /* ZYCirclePlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F732C23E1E514EA9001A5911 /* ZYCirclePlayView.m */; };
 		F7410D2E1E1B85130043AD18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7410D2D1E1B85130043AD18 /* main.m */; };
 		F7410D311E1B85130043AD18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7410D301E1B85130043AD18 /* AppDelegate.m */; };
 		F7410D371E1B85130043AD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7410D351E1B85130043AD18 /* Main.storyboard */; };
@@ -24,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F732C23A1E514BC4001A5911 /* WheelPlayByOneImageViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelPlayByOneImageViewVC.h; sourceTree = "<group>"; };
+		F732C23B1E514BC4001A5911 /* WheelPlayByOneImageViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelPlayByOneImageViewVC.m; sourceTree = "<group>"; };
+		F732C23D1E514EA9001A5911 /* ZYCirclePlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCirclePlayView.h; sourceTree = "<group>"; };
+		F732C23E1E514EA9001A5911 /* ZYCirclePlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCirclePlayView.m; sourceTree = "<group>"; };
 		F7410D291E1B85130043AD18 /* ZYWheelPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYWheelPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7410D2D1E1B85130043AD18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F7410D2F1E1B85130043AD18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +94,10 @@
 				F7410D521E1B8E550043AD18 /* WheelPlayByManyImageViewVC.m */,
 				F7410D541E1B8E700043AD18 /* WheelPlayByThreeImageViewVC.h */,
 				F7410D551E1B8E700043AD18 /* WheelPlayByThreeImageViewVC.m */,
+				F732C23A1E514BC4001A5911 /* WheelPlayByOneImageViewVC.h */,
+				F732C23B1E514BC4001A5911 /* WheelPlayByOneImageViewVC.m */,
+				F732C23D1E514EA9001A5911 /* ZYCirclePlayView.h */,
+				F732C23E1E514EA9001A5911 /* ZYCirclePlayView.m */,
 				F7410D5D1E1B9C8E0043AD18 /* WheelPlayPCH.pch */,
 				F7410D431E1B85310043AD18 /* Images */,
 				F7410D351E1B85130043AD18 /* Main.storyboard */,
@@ -199,7 +209,9 @@
 				F7410D501E1B87EB0043AD18 /* RootTableViewController.m in Sources */,
 				F7410D561E1B8E700043AD18 /* WheelPlayByThreeImageViewVC.m in Sources */,
 				F7410D591E1B93B10043AD18 /* WheelPlayViewController.m in Sources */,
+				F732C23F1E514EA9001A5911 /* ZYCirclePlayView.m in Sources */,
 				F7410D531E1B8E550043AD18 /* WheelPlayByManyImageViewVC.m in Sources */,
+				F732C23C1E514BC4001A5911 /* WheelPlayByOneImageViewVC.m in Sources */,
 				F7410D311E1B85130043AD18 /* AppDelegate.m in Sources */,
 				F7410D2E1E1B85130043AD18 /* main.m in Sources */,
 			);
