@@ -1,4 +1,4 @@
-# UIScrollView + 多张 ImageView 实现轮播
+## UIScrollView + 多张 ImageView 实现轮播
 
 实现原理：
 
@@ -59,7 +59,7 @@ for (NSInteger i = 0; i < count + 1; i++) {
 	}
 	```
 	
-# UIScrollView + 3 张 ImageView 实现轮播
+## UIScrollView + 3 张 ImageView 实现轮播
 	
 实现原理：
 
@@ -155,6 +155,90 @@ for (NSInteger i = 0; i < 3; i++) {
 		[self.scrollView setContentOffset:CGPointMake(2 * DEVICE_WIDTH, 0) animated:YES];
 	}
 	```
+
+## 一张 ImageView 实现轮播
+
+实现原理：
+
+在 ImageView 上添加左清扫手势和右清扫手势，当左滑和右滑时，ImageView 的 layer 层做从右方向和从左方向的 push 转场动画，实现轮播效果。
+
+代码如下：
+
+```
+/**
+ *  添加手势
+ */
+- (void)addGuesture {
+    // 1.添加左滑动手势
+    _leftSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureMethod:)];
+    _leftSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:_leftSwipeGesture];
+    
+    // 2.添加右滑动手势
+    _rightSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureMethod:)];
+    _rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self addGestureRecognizer:_rightSwipeGesture];
+}
+
+/**
+ *  添加转场动画
+ *
+ *  @param direction 手势方向
+ */
+- (void)animationTransitionWithSwipeGestureRecognizerDirection:(UISwipeGestureRecognizerDirection)direction {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.5f;
+    // 设置动画的样式
+    transition.type = kCATransitionPush;
+    if (direction == UISwipeGestureRecognizerDirectionRight) {
+        transition.subtype = @"fromLeft";
+    } else {
+        transition.subtype = @"fromRight";
+    }
+    [_imgView.layer addAnimation:transition forKey:nil];
+}
+```
+
+1. 手动轮播
+
+  ```
+  /**
+    *  手势响应方法
+    *
+    *  @param swipeGesture 响应的手势
+    */
+  - (void)gestureMethod:(UISwipeGestureRecognizer *)swipeGesture {
+      [_timer invalidate];
+      switch (swipeGesture.direction) {
+          case UISwipeGestureRecognizerDirectionLeft:
+              _index++;
+              [self setImageWithIndex:_index];
+              [self animationTransitionWithSwipeGestureRecognizerDirection:swipeGesture.direction];
+              break;
+          case UISwipeGestureRecognizerDirectionRight:
+              _index--;
+              [self setImageWithIndex:_index];
+              [self animationTransitionWithSwipeGestureRecognizerDirection:swipeGesture.direction];
+              break;
+          default:
+              break;
+      }
+      _timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(timerMethod) userInfo:nil repeats:YES];
+  }
+  ```  
+
+2. 自动轮播
+
+  ```
+  /**
+    *  定时器响应方法
+    */
+  - (void)timerMethod {
+      _index++;
+      [self setImageWithIndex:_index];
+      [self animationTransitionWithSwipeGestureRecognizerDirection:_leftSwipeGesture.direction];
+  }
+  ```
 	
 
 
